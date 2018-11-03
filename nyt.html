@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>NYT</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+  
+  <div id="display"></div>
+
+  <script>
+    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "ac23ec76b9d54be19edcbf64d45a646f"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
+});
+    
+  </script>
+</body>
+</html>
